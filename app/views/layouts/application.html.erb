@@ -12,8 +12,11 @@
 <!-- Logo of Owen -->
   <div class="col-xs-3">
     <div>
+    <%= link_to root_path do %>
       <img class="owen" src="https://cl.ly/0h0W371N2k2L/[c06ff91677cb12a00c621c4badc56c52]_Image%25202016-12-26%2520at%25202.09.09%2520PM.png" alt="Owen">
+    <% end %>    
     </div>
+    
   </div>
 
 <!-- Adding another class for the slogan font -->
@@ -23,7 +26,7 @@
 
 <!-- Links to our other sections -->
   <div class="col-xs-5 links">
-    <%= link_to 'Contribute', '#' %>
+    <%= link_to 'Contribute', new_quote_path %> <!-- Found the new_quote_path link in rake routes -->
     <%= link_to 'About', '#' %>
   </div>
 </header>
@@ -31,7 +34,20 @@
 <hr/>
 <br class="clear"/>
 
+<div class="container">
 <%= yield %>
 
+  <div class="footer">
+    <div class="container">
+      <div class="col-xs-6">
+          <!-- Ruby link -->
+        <%= link_to "I need moar doge!", root_path, class: "next-quote" %>
+      </div>
+      <div class="col-xs-6 footer-blurb">
+        Proudly developed by <a href="https://twitter.com/angusyang91" target="_blank">Angus</a>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
